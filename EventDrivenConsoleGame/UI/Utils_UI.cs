@@ -43,10 +43,7 @@ static class Utils_UI
     {
         for (int i = 0; i < text.Length; i++)
         {
-            if (x + i < GameData.WIDTH) // Prevent overflow
-            {
-                _backBuffer[x + i, y] = text[i];
-            }
+            SetPixel(x + i, y, text[i]);
         }
     }
 
