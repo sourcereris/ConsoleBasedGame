@@ -51,11 +51,11 @@
         _navGraph.SetStartNode(startNode);
 
         // 5. Subscribe to your Input Events!
-        InputEvents.Key_W_Event += _navGraph.OnNavigate;
-        InputEvents.Key_S_Event += _navGraph.OnNavigate;
-        InputEvents.Key_A_Event += _navGraph.OnNavigate;
-        InputEvents.Key_D_Event += _navGraph.OnNavigate;
-        InputEvents.Key_Spacebar_Event += _navGraph.OnSubmit;
+        InputEvents.Key_W_Event += (dir) => { if (GameData.currentState == GameState.MainMenu) _navGraph.OnNavigate(dir); };
+        InputEvents.Key_S_Event += (dir) => { if (GameData.currentState == GameState.MainMenu) _navGraph.OnNavigate(dir); };
+        InputEvents.Key_A_Event += (dir) => { if (GameData.currentState == GameState.MainMenu) _navGraph.OnNavigate(dir); };
+        InputEvents.Key_D_Event += (dir) => { if (GameData.currentState == GameState.MainMenu) _navGraph.OnNavigate(dir); };
+        InputEvents.Key_Spacebar_Event += () => { if (GameData.currentState == GameState.MainMenu) _navGraph.OnSubmit(); };
     }
 
     public override void Render()

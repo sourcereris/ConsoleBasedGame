@@ -50,6 +50,8 @@ static class Utils_UI
         }
     }
 
+    private static char[] _rowBuffer = new char[GameData.WIDTH];
+
     public static void RenderBuffer() //uses string builder for better performance
     {
         for (int y = 0; y < GameData.HEIGHT; y++)
@@ -57,15 +59,13 @@ static class Utils_UI
 
             Console.SetCursorPosition(0, y); //works as /n
 
-            StringBuilder row = new StringBuilder(GameData.WIDTH);
-
             for (int x = 0; x < GameData.WIDTH; x++)
             {
-                row.Append(_backBuffer[x, y]);
+                _rowBuffer[x] = _backBuffer[x, y];
             }
 
             // row WITHOUT /n
-            Console.Write(row.ToString());
+            Console.Write(_rowBuffer);
         }
     }
 
