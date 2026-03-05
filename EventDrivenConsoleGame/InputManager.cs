@@ -11,19 +11,19 @@ class InputManager
         switch (consoleKeyInfo.Key)
         {
             case ConsoleKey.Spacebar:
-                InputEvents.Key_Spacebar_Event?.Invoke();
+                InputEvents.Invoke_Key_Spacebar_Event();
                 break;
             case ConsoleKey.W:
-                InputEvents.Key_W_Event?.Invoke(new Vector2(0, 1));
+                InputEvents.Invoke_Key_W_Event(new Vector2(0, 1));
                 break;
             case ConsoleKey.A:
-                    InputEvents.Key_A_Event?.Invoke(new Vector2(-1, 0));
+                InputEvents.Invoke_Key_A_Event(new Vector2(-1, 0));
                 break;
             case ConsoleKey.D:
-                    InputEvents.Key_D_Event?.Invoke(new Vector2(1, 0));
+                InputEvents.Invoke_Key_D_Event(new Vector2(1, 0));
                 break;
             case ConsoleKey.S:
-                    InputEvents.Key_S_Event?.Invoke(new Vector2(0, -1));
+                InputEvents.Invoke_Key_S_Event(new Vector2(0, -1));
                 break;
             default:
                 break;

@@ -68,11 +68,11 @@ public class GameLayout : Layout
         _navGraph.SetStartNode(n1);
 
         // 4. Bind the input events
-        InputEvents.Key_W_Event += _navGraph.OnNavigate;
-        InputEvents.Key_S_Event += _navGraph.OnNavigate;
-        InputEvents.Key_A_Event += _navGraph.OnNavigate; // Will safely do nothing
-        InputEvents.Key_D_Event += _navGraph.OnNavigate; // Will safely do nothing
-        InputEvents.Key_Spacebar_Event += _navGraph.OnSubmit;
+        InputEvents.Key_W_Event += (dir) => { if (GameData.currentState == GameState.Playing) _navGraph.OnNavigate(dir); };
+        InputEvents.Key_S_Event += (dir) => { if (GameData.currentState == GameState.Playing) _navGraph.OnNavigate(dir); };
+        InputEvents.Key_A_Event += (dir) => { if (GameData.currentState == GameState.Playing) _navGraph.OnNavigate(dir); }; // Will safely do nothing
+        InputEvents.Key_D_Event += (dir) => { if (GameData.currentState == GameState.Playing) _navGraph.OnNavigate(dir); }; // Will safely do nothing
+        InputEvents.Key_Spacebar_Event += () => { if (GameData.currentState == GameState.Playing) _navGraph.OnSubmit(); };
     }
 
     public override void Render()
