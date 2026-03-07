@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-class GameLogic
+public static class GameLogic
 {
 
-    public GameLogic()
-    {
-        InputEvents.Key_Spacebar_Event += AddScore;
-    }
-
-    public void TimeIncrement() 
+    public static void TimeIncrement() 
     {
         GameData.time += KTime.DeltaTime;
     }
-    public void AddScore()
+    public static void AddScore()
     {
         GameData.Score += 10;
     }

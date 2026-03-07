@@ -1,11 +1,6 @@
 ﻿using System.Numerics;
 class InputManager
 {
-    private GameLogic _gameLogic;
-    public InputManager(GameLogic gl) 
-    {
-        _gameLogic = gl;
-    }
     public void ManageKey(ConsoleKeyInfo consoleKeyInfo) 
     {
         switch (consoleKeyInfo.Key)
@@ -13,6 +8,9 @@ class InputManager
             case ConsoleKey.Spacebar:
                 InputEvents.Invoke_Key_Spacebar_Event();
                 break;
+            case ConsoleKey.Escape:
+                break;
+                InputEvents.Invoke_Key_Escape_Event();
             case ConsoleKey.W:
                 InputEvents.Invoke_Key_W_Event(new Vector2(0, 1));
                 break;

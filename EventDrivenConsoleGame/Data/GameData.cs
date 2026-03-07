@@ -20,4 +20,12 @@ static class GameData
 
     public const int WIDTH = 120;
     public const int HEIGHT = 30;
+
+    public static float btn1 = 0.1f;
+    public static float btn2 = 50f;
+    public static float btn3 = 50f;
+    public static float btn4 = 50f;
+    public static float btn5 = 50f;
+    public static float btn6 = 50f;
+
 }

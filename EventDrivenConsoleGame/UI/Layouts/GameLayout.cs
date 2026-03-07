@@ -42,6 +42,15 @@ public class GameLayout : Layout
         _btn4 = new Button(" ", startX, startY + (stepY * 3), btnWidth, btnHeight);
         _btn5 = new Button(" ", startX, startY + (stepY * 4), btnWidth, btnHeight);
         _btn6 = new Button(" ", startX, startY + (stepY * 5), btnWidth, btnHeight);
+
+        _btn1.GetDynamicText = () => $"{GameData.btn1:F2}";
+        _btn2.GetDynamicText = () => $"{GameData.btn2:F2}";
+        _btn3.GetDynamicText = () => $"{GameData.btn3:F2}";
+        _btn4.GetDynamicText = () => $"{GameData.btn4:F2}";
+        _btn5.GetDynamicText = () => $"{GameData.btn5:F2}";
+        _btn6.GetDynamicText = () => $"{GameData.btn6:F2}";
+
+        _btn1.OnClick = UpgradeButton;
     }
 
     private void SetupButtonGraph()
@@ -84,4 +93,6 @@ public class GameLayout : Layout
         _btn5.Render();
         _btn6.Render();
     }
+
+    private void UpgradeButton1() {}
 }

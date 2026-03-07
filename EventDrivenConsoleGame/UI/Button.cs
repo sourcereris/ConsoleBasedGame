@@ -9,6 +9,8 @@
     public bool markOnLeft { get; set; } = true;
     public Action OnClick { get; set; }
 
+    public Func<string> GetDynamicText { get; set; }
+
     public Button(string text, int x, int y, int width, int height)
     {
         Text = text;
@@ -27,7 +29,13 @@
 
         Utils_UI.DrawText(textX, textY, Text);
 
-        Console.ResetColor();
+        if (GetDynamicText != null)
+        { 
+            string dynamicText = GetDynamicText.Invoke();
+
+            int dynamicX = X + Width - dynamicText.Length-2;
+            Utils_UI.DrawText(dynamicX, Y + Height /2, dynamicText);
+        }
 
         if (IsSelected)
         {
