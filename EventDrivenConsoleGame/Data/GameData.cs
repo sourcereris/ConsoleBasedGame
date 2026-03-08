@@ -11,7 +11,7 @@ enum GameState
  
 static class GameData
 {
-    public static int Score = 0;
+    public static double Score = 0;
     public static double time = 0;
 
     public static GameState currentState;
@@ -21,11 +21,13 @@ static class GameData
     public const int WIDTH = 120;
     public const int HEIGHT = 30;
 
-    public static float btn1 = 0.1f;
-    public static float btn2 = 50f;
-    public static float btn3 = 50f;
-    public static float btn4 = 50f;
-    public static float btn5 = 50f;
-    public static float btn6 = 50f;
+    public static double btn1 = 0.1f;
+    public static double btn2 = 0f;
+    public static double btn3 = 0f;
+    public static double btn4 = 0f;
+    public static double btn5 = 0f;
+    public static double btn6 = 0f;
+
+    public static double allbtns = btn1 + btn2 + btn3 + btn4 + btn5 + btn6 ;
 
 }

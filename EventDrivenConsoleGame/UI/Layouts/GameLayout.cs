@@ -50,7 +50,12 @@ public class GameLayout : Layout
         _btn5.GetDynamicText = () => $"{GameData.btn5:F2}";
         _btn6.GetDynamicText = () => $"{GameData.btn6:F2}";
 
-        _btn1.OnClick = UpgradeButton;
+        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(1);
+        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(2);
+        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(3);
+        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(4);
+        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(5);
+        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(6);
     }
 
     private void SetupButtonGraph()
@@ -92,7 +97,10 @@ public class GameLayout : Layout
         _btn4.Render();
         _btn5.Render();
         _btn6.Render();
-    }
 
-    private void UpgradeButton1() {}
+        string score = GameData.Score.ToString("F2");
+        int scoreX = (GameData.WIDTH - score.Length) / 2;
+        Utils_UI.DrawBox(scoreX, 2, 12, 3);
+        Utils_UI.DrawText(scoreX + 1, 3, $"{score}");
+    }
 }

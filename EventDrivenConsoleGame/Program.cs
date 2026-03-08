@@ -3,8 +3,7 @@ const int UI_FPS = 30;
 double LogicFrameTime = 1.0 / Main_FPS;
 double UIFrameTime = 1.0 / UI_FPS;
 
-GameLogic gameLogic = new GameLogic();
-InputManager inputManager = new InputManager(gameLogic);
+InputManager inputManager = new InputManager();
 
 SetupConsole();
 
@@ -24,7 +23,7 @@ while (GameData.IsPlaying)
         KTime.ConsumeElapsedTime_Main(LogicFrameTime);    
     }
     
-    gameLogic.TimeIncrement();
+    GameLogic.TimeIncrement();
     
     if (KTime.ElapsedTime_UI >= UIFrameTime) 
     {
@@ -37,7 +36,7 @@ while (GameData.IsPlaying)
 
 void SetupConsole() 
 {
-    GameData.currentState = GameState.MainMenu;
+    GameData.currentState = GameState.Playing;
     Console.CursorVisible = false;
     Console.Clear();
 }
