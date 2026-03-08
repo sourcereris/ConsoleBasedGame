@@ -28,6 +28,6 @@ static class GameData
     public static double btn5 = 0f;
     public static double btn6 = 0f;
 
-    public static double allbtns = btn1 + btn2 + btn3 + btn4 + btn5 + btn6 ;
+    public static double allbtns => btn1 + btn2 + btn3 + btn4 + btn5 + btn6;
 
 }

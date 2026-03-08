@@ -51,11 +51,11 @@ public class GameLayout : Layout
         _btn6.GetDynamicText = () => $"{GameData.btn6:F2}";
 
         _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(1);
-        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(2);
-        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(3);
-        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(4);
-        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(5);
-        _btn1.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(6);
+        _btn2.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(2);
+        _btn3.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(3);
+        _btn4.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(4);
+        _btn5.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(5);
+        _btn6.OnClick = () => GameEvents.Invoke_Button_Upgrade_Event(6);
     }
 
     private void SetupButtonGraph()
@@ -74,6 +74,7 @@ public class GameLayout : Layout
         n3.Down = n4; n4.Up = n3;
         n4.Down = n5; n5.Up = n4;
         n5.Down = n6; n6.Up = n5;
+        n6.Down = n1; n1.Up = n6;
 
         // (Left and Right remain null, so horizontal input is ignored)
 
